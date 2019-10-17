@@ -1,7 +1,7 @@
 SET search_path = oblig3;
 
-DROP TABLE IF EXISTS student;
-DROP TABLE IF EXISTS klasse;
+DROP TABLE IF EXISTS deltagere;
+DROP TABLE IF EXISTS salt;
 
 CREATE TABLE deltagere 
 (
