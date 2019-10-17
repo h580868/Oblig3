@@ -27,3 +27,6 @@ hs_err_pid*
 # Project files
 .project
 .classpath
+
+# Mac shit
+.DS_Store
