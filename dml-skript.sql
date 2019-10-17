@@ -1,34 +1,27 @@
-SET search_path = f15demo;
+SET search_path = oblig3;
 
 DROP TABLE IF EXISTS student;
 DROP TABLE IF EXISTS klasse;
 
-CREATE TABLE klasse 
+CREATE TABLE deltagere 
 (
-   kode     CHARACTER VARYING (10),
-   program  CHARACTER VARYING (40),
-   PRIMARY KEY (kode)
+   mobil INTEGER (8) UNIQUE NOT NULL,
+   password TEXT NOT NULL,
+   fornavn TEXT (25) NOT NULL,
+   etternavn TEXT (25) NOT NULL,
+   kjonn CHAR (1) NOT NULL
+   PRIMARY KEY (mobil)
 );
 
-CREATE TABLE student 
+CREATE TABLE salt
 (
-   id           CHARACTER (7),
-   navn         CHARACTER VARYING (40),
-   klasse_kode  CHARACTER VARYING (10),
-   PRIMARY KEY (id),
-   FOREIGN KEY (klasse_kode) REFERENCES klasse (kode)
+   id SERIAL,
+   salt TEXT NOT NULL
+   PRIMARY KEY (id)
 );
 
-INSERT INTO klasse VALUES 
-	('17hData', 'Dataingeniør'),
-	('17hInf', 'Informasjonsteknologi');
+INSERT INTO deltagere VALUES 
+	(12345678, 'BLAH', 'John', 'Smith', 'm');
 
-INSERT INTO student VALUES 
-	('123456', 'Arne', '17hData'),
-	('123457', 'Brit', '17hData'),
-	('123458', 'Carl', '17hData'),
-	('123459', 'Dina', '17hInf'),
-	('123460', 'Erik', '17hInf'),
-	('123461', 'Fred', '17hInf');
-
-
+INSERT INTO salt VALUES 
+	('bf');
