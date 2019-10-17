@@ -9,15 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/leggtil")
+@WebServlet(name = "leggtil", urlPatterns = {"leggtil"})
 public class LeggTilStudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@EJB
 	StudentEAO studentEAO;
 
-	//Jeg burde *absolutt* brukt doPost her, men da måtte jeg
-	//laget en html-side med en <form> for å kjøre den.
+	//Jeg burde *absolutt* brukt doPost her, men da mï¿½tte jeg
+	//laget en html-side med en <form> for ï¿½ kjï¿½re den.
 	protected void doGet(HttpServletRequest request, 
 			HttpServletResponse response) 
 			throws ServletException, IOException {
