@@ -21,7 +21,21 @@ public class ListeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, 
 			HttpServletResponse response) 
 			throws ServletException, IOException {
-		
+		/* Todo
+		 * sjekk om innlogged if(!innloggingUtil.erInlogget(){ 
+		 * använd egna klasser för att minska rot
+		 * {else{ redirect til /inlogging + felmedelande}
+		 * DeltagerEAO deltagerEAO
+		 * deltagerEAO. hentUtAlleDeltagere
+		 * sortering, alfabetiskordning?
+		 * sortera två gånger med hjälp av comparator en gång på fornavn en på efternavn
+		 * formatering? skicka över till annat objekt/extra GETs för formaterad info
+		 * forward till WEB-INF/deltagerliste.jsp
+		 * ta vare på deltagerliste(från databas) i request
+		 * 
+		 * web.xml
+		 * 
+		 */
 		String klassekode = request.getParameter("klassekode");
 		
 		List<Student> liste = studentEAO.hentKlasselisteFor(klassekode);

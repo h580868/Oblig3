@@ -1,9 +1,10 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <!-- Fra https://purecss.io/ -->
 <link rel="stylesheet"
 	href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
@@ -13,7 +14,7 @@
 	<h2>Deltagerliste</h2>
 	<table class="pure-table">
 		<tr bgcolor="#cccccc">
-			<th>Kjønn</th>
+			<th>KjÃ¸nn</th>
 			<th align="left">Navn</th>
 			<th align="left">Mobil</th>
 		</tr>
