@@ -16,7 +16,7 @@ public class ListeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	@EJB
-	DeltagerEAO studentEAO;
+	DeltagerEAO deltagerEAO;
        
 	protected void doGet(HttpServletRequest request, 
 			HttpServletResponse response) 
@@ -36,14 +36,14 @@ public class ListeServlet extends HttpServlet {
 		 * web.xml
 		 * 
 		 */
-		String klassekode = request.getParameter("klassekode");
+		//String klassekode = request.getParameter("klassekode");
 		
-		List<Deltager> liste = studentEAO.hentKlasselisteFor(klassekode);
+		//List<Deltager> liste = deltagerEAO.hentKlasselisteFor(klassekode);
 		
 		response.setContentType("text/plain");
 		
-		PrintWriter out = response.getWriter();
+		//PrintWriter out = response.getWriter();
 		
-		liste.forEach(out::println);
+		//liste.forEach(out::println);
 	}
 }

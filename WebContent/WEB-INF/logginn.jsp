@@ -22,7 +22,7 @@
 				<label for="mobil">Mobil:</label> <input type="text" name="mobil" />
 			</div>
 			<div class="pure-control-group">
-				<label for="passord">Passord:</label> <input type="password"
+				<label for="password">Password:</label> <input type="password"
 					name="passord" />
 			</div>
 			<div class="pure-controls">

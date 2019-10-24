@@ -9,29 +9,29 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class DeltagerEAO {
 	
-	@PersistenceContext(name = "studentPU")
+	@PersistenceContext(name = "deltagerPU")
     private EntityManager em;
 	
 //	public Klasse hentKlasse(String klassekode) {
 //		return em.find(Klasse.class, klassekode);
 //	}
 	
-	public void leggTilStudent(Deltager s, String klassekode) {
+	public void leggTilDeltager(Deltager d) {
 		
 //		Klasse klasse = hentKlasse("17hData");
 //		evt. inlinet som:
-		Klasse klasse = em.find(Klasse.class, klassekode);
+//		Klasse klasse = em.find(Klasse.class, klassekode);
+//		s.setKlasse(klasse);
+//		klasse.addStudent(s);
 		
-		s.setKlasse(klasse);
-		klasse.addStudent(s);
-		em.persist(s);
+		em.persist(d);
 	}
 	
 
-	public List<Deltager> hentKlasselisteFor(String klassekode) {
-		// Her utnytter jeg toveis navigasjon!
-		return em.find(Klasse.class, klassekode).getStudenter();
-	}
+//		public List<Deltager> hentKlasselisteFor(String klassekode) {
+// 		Her utnytter jeg toveis navigasjon!
+//		return em.find(Klasse.class, klassekode).getStudenter();
+//	}
 	
 // Alt for tungvint:
 //	public List<Student> hentKlasselisteFor2(String klassekode) {

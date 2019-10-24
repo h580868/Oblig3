@@ -14,7 +14,7 @@ public class LeggTilDeltagerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@EJB
-	DeltagerEAO studentEAO;
+	DeltagerEAO deltagerEAO;
 
 	//Jeg burde *absolutt* brukt doPost her, men da m�tte jeg
 	//laget en html-side med en <form> for � kj�re den.
@@ -22,10 +22,11 @@ public class LeggTilDeltagerServlet extends HttpServlet {
 			HttpServletResponse response) 
 			throws ServletException, IOException {
 		
-		Deltager s = new Deltager();
-		s.setId("3456789");
-		s.setNavn("Donald");
-		studentEAO.leggTilStudent(s, "17hData");
+		Deltager d = new Deltager();
+		d.setMobil("3456789");
+		d.setFornavn("Donald");
+		d.setEtternavn("Trump");
+		deltagerEAO.leggTilDeltager(d);
 		
 	}
 
