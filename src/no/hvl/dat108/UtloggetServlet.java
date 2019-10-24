@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class UtloggetServlet
  */
-@WebServlet("/UtloggetServlet")
+@WebServlet(name = "utlogget", urlPatterns = { "utlogget" })
 public class UtloggetServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
