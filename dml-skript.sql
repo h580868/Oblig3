@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS salt;
 
 CREATE TABLE deltagere 
 (
-   mobil INTEGER (8) UNIQUE NOT NULL,
+   mobil TEXT (8) UNIQUE NOT NULL,
    password TEXT NOT NULL,
    fornavn TEXT (25) NOT NULL,
    etternavn TEXT (25) NOT NULL,

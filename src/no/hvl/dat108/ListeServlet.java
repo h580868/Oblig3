@@ -16,7 +16,7 @@ public class ListeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	@EJB
-	StudentEAO studentEAO;
+	DeltagerEAO studentEAO;
        
 	protected void doGet(HttpServletRequest request, 
 			HttpServletResponse response) 
@@ -38,7 +38,7 @@ public class ListeServlet extends HttpServlet {
 		 */
 		String klassekode = request.getParameter("klassekode");
 		
-		List<Student> liste = studentEAO.hentKlasselisteFor(klassekode);
+		List<Deltager> liste = studentEAO.hentKlasselisteFor(klassekode);
 		
 		response.setContentType("text/plain");
 		

@@ -16,7 +16,7 @@ public class Klasse {
     private String program;
 
     @OneToMany(mappedBy = "klasse")
-    private List<Student> studenter;
+    private List<Deltager> studenter;
     
 	public String getKode() {
 		return kode;
@@ -26,11 +26,11 @@ public class Klasse {
 		return program;
 	}
 
-	public List<Student> getStudenter() {
+	public List<Deltager> getStudenter() {
 		return studenter;
 	}
     
-    public void addStudent(Student s) {
+    public void addStudent(Deltager s) {
     	studenter.add(s);
     }
     

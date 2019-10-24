@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "leggtil", urlPatterns = {"leggtil"})
-public class LeggTilStudentServlet extends HttpServlet {
+public class LeggTilDeltagerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@EJB
-	StudentEAO studentEAO;
+	DeltagerEAO studentEAO;
 
 	//Jeg burde *absolutt* brukt doPost her, men da m�tte jeg
 	//laget en html-side med en <form> for � kj�re den.
@@ -22,7 +22,7 @@ public class LeggTilStudentServlet extends HttpServlet {
 			HttpServletResponse response) 
 			throws ServletException, IOException {
 		
-		Student s = new Student();
+		Deltager s = new Deltager();
 		s.setId("3456789");
 		s.setNavn("Donald");
 		studentEAO.leggTilStudent(s, "17hData");

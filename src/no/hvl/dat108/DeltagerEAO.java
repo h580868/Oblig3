@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Stateless
-public class StudentEAO {
+public class DeltagerEAO {
 	
 	@PersistenceContext(name = "studentPU")
     private EntityManager em;
@@ -16,7 +16,7 @@ public class StudentEAO {
 //		return em.find(Klasse.class, klassekode);
 //	}
 	
-	public void leggTilStudent(Student s, String klassekode) {
+	public void leggTilStudent(Deltager s, String klassekode) {
 		
 //		Klasse klasse = hentKlasse("17hData");
 //		evt. inlinet som:
@@ -28,7 +28,7 @@ public class StudentEAO {
 	}
 	
 
-	public List<Student> hentKlasselisteFor(String klassekode) {
+	public List<Deltager> hentKlasselisteFor(String klassekode) {
 		// Her utnytter jeg toveis navigasjon!
 		return em.find(Klasse.class, klassekode).getStudenter();
 	}

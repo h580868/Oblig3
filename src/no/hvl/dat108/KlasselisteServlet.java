@@ -16,7 +16,7 @@ public class KlasselisteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@EJB
-	private StudentEAO studentEAO;
+	private DeltagerEAO studentEAO;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -28,7 +28,7 @@ public class KlasselisteServlet extends HttpServlet {
 			return;
 		}
 		
-		List<Student> klasseliste = studentEAO.hentKlasselisteFor(klassekode);
+		List<Deltager> klasseliste = studentEAO.hentKlasselisteFor(klassekode);
 		
 		response.setContentType("text/plain");
 		PrintWriter out = response.getWriter();
