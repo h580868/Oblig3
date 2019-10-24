@@ -9,25 +9,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "leggtil", urlPatterns = {"leggtil"})
-public class LeggTilDeltagerServlet extends HttpServlet {
+@WebServlet(name = "leggtil", urlPatterns = { "leggtil" })
+public class InnloggingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@EJB
 	DeltagerEAO deltagerEAO;
 
-	//Jeg burde *absolutt* brukt doPost her, men da m�tte jeg
-	//laget en html-side med en <form> for � kj�re den.
-	protected void doGet(HttpServletRequest request, 
-			HttpServletResponse response) 
+	// Jeg burde *absolutt* brukt doPost her, men da m�tte jeg
+	// laget en html-side med en <form> for � kj�re den.
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		Deltager d = new Deltager();
-		d.setMobil("3456789");
+		d.setMobil("34546789");
 		d.setFornavn("Donald");
 		d.setEtternavn("Trump");
 		deltagerEAO.leggTilDeltager(d);
-		
+
 	}
 
 }

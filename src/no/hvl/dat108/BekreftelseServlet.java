@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class PaameldingServlet
+ * Servlet implementation class BekreftelseServlet
  */
-@WebServlet(name="paamelding" , urlPatterns= {"paamelding"})
-public class PaameldingServlet extends HttpServlet {
+@WebServlet("/BekreftelseServlet")
+public class BekreftelseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public PaameldingServlet() {
+    public BekreftelseServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,8 +26,7 @@ public class PaameldingServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO forward to WEB-INF/paamelding.jsp + plocka upp data och felmedelanden
-		
+		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -35,32 +34,7 @@ public class PaameldingServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/* TODO 
-		 * hemta alla parametrar (i ett objekt snarare än enskilda variablar kanske)
-		 * validera alla parametrar
-		 * 
-		 * if(!allaErGyldige || erPaameltFraFor) {
-		 * göra klar felmedelanden ++
-		 * redirekt till sig själv
-		 * 
-		 * Hovedide: ...
-		 * 
-		 * 
-		 * }else{
-		 * generera passwordSalt
-		 * Hash password
-		 * 
-		 * DeltagarObjekt
-		 * 
-		 * melde på festen (+ exception handling?)
-		 * - registrera i databasen
-		 * -
-		 * logga in (InloggingsUtil...)
-		 * redirect till bekreftelse(kan göra forward)
-		 * 
-		 * 
-		 * 
-		 */
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

@@ -3,39 +3,46 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-
-
-    <servlet>
-        <servlet-name>klasseliste</servlet-name>
-        <servlet-class>no.hvl.dat108.KlasselisteServlet</servlet-class>
-        <init-param>
-            <param-name></param-name>
-            <param-value></param-value>
-        </init-param>
-        <init-param>
-            <param-name></param-name>
-            <param-value></param-value>
-        </init-param>
-    </servlet>
-    <servlet>
-        <servlet-name>liste</servlet-name>
-        <servlet-class>no.hvl.dat108.ListeServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>leggtill</servlet-name>
-        <servlet-class>no.hvl.dat108.LeggTillStudentServlet</servlet-class>
+         <servlet>
+        <servlet-name>bekreftelse</servlet-name>
+        <servlet-class>no.hvl.dat108.BekreftelseServlet</servlet-class>
     </servlet>
    
-    <servlet-mapping>
-        <servlet-name>klasseliste</servlet-name>
-        <url-pattern>/klasseliste</url-pattern>
+    <servlet>
+        <servlet-name>deltagerliste</servlet-name>
+        <servlet-class>no.hvl.dat108.DeltagerListeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>inlogging</servlet-name>
+        <servlet-class>no.hvl.dat108.InnloggingServlet</servlet-class>
+    </servlet>
+     <servlet>
+        <servlet-name>paamelding</servlet-name>
+        <servlet-class>no.hvl.dat108.PaameldingServlet</servlet-class>
+    </servlet>
+   <servlet>
+        <servlet-name>utlogget</servlet-name>
+        <servlet-class>no.hvl.dat108.UtloggetServlet</servlet-class>
+    </servlet>
+   
+   <servlet-mapping>
+        <servlet-name>bekreftelse</servlet-name>
+        <url-pattern>/bekreftelse</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>list</servlet-name>
-        <url-pattern>/list</url-pattern>
+        <servlet-name>deltagerliste</servlet-name>
+        <url-pattern>/deltagerliste</url-pattern>
+    </servlet-mapping>
+   <servlet-mapping>
+        <servlet-name>innlogging</servlet-name>
+        <url-pattern>/innlogging</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>paamelding</servlet-name>
+        <url-pattern>/paamelding</url-pattern>
     </servlet-mapping>
      <servlet-mapping>
-        <servlet-name>leggtill</servlet-name>
-        <url-pattern>/leggtill</url-pattern>
+        <servlet-name>utlogget</servlet-name>
+        <url-pattern>/utlogget</url-pattern>
     </servlet-mapping>
 </web-app>
