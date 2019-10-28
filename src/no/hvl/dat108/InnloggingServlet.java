@@ -16,17 +16,32 @@ public class InnloggingServlet extends HttpServlet {
 	@EJB
 	DeltagerEAO deltagerEAO;
 
-	// Jeg burde *absolutt* brukt doPost her, men da m�tte jeg
-	// laget en html-side med en <form> for � kj�re den.
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+	
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
 		Deltager d = new Deltager();
-		d.setMobil("34546789");
-		d.setFornavn("Donald");
-		d.setEtternavn("Trump");
+		//borde sannolikt spara parameter som variablar först för att validera eller gör vi det bara i JS?
+		d.setMobil(request.getParameter("mobil"));
+		d.setFornavn(request.getParameter("fornavn"));
+		d.setEtternavn(request.getParameter("etternavn"));
+		
 		deltagerEAO.leggTilDeltager(d);
 
 	}
+	
+	protected class Validator {
+
+	    public boolean validator(String s) {
+	        return s != null
+	                && s.length() == 8
+	                && s.matches("^[0-9]+$");
+	    }
+	    }
 
 }

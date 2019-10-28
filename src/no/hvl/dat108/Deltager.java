@@ -18,6 +18,25 @@ public class Deltager {
 	private char kjonn;
 	
 	
+	public String getMobil() {
+		return mobil;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public String getFornavn() {
+		return fornavn;
+	}
+	public String getEtternavn() {
+		return etternavn;
+	}
+	
+	public String getDeltager() {
+		return getFornavn() + " " + getEtternavn(); 
+	}
+	public char getKjonn() {
+		return kjonn;
+	}
 	public void setMobil(String mobil) {
 		this.mobil = mobil;
 	}
@@ -33,6 +52,7 @@ public class Deltager {
 	public void setKjonn(char kjonn) {
 		this.kjonn = kjonn;
 	}
+	
 	@Override
 	public String toString() {
 		return "Deltager [mobil=" + mobil + ", password=" + password + ", fornavn=" + fornavn + ", etternavn="

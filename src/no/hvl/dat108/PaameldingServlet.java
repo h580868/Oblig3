@@ -6,10 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.ejb.EJB;
 
-/**
- * Servlet implementation class PaameldingServlet
- */
 @WebServlet(name="paamelding" , urlPatterns= {"paamelding"})
 public class PaameldingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

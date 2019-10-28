@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.RequestDispatcher;
 
 @WebServlet(name = "liste", urlPatterns = {"liste"})
 public class DeltagerListeServlet extends HttpServlet {
@@ -21,6 +22,20 @@ public class DeltagerListeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, 
 			HttpServletResponse response) 
 			throws ServletException, IOException {
+		String forwardToDeltagerListe = "WEB-INF/deltagerliste.jsp";
+
+		
+		if (!InnloggingUtil.erInnlogget()) {
+			
+			redirect 
+		
+		} else {
+			deltagerEAO.hentUtalla;
+			
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(forwardToDeltagerListe);
+            dispatcher.forward(request, response);
+			
+		}
 		/* Todo
 		 * sjekk om innlogged if(!innloggingUtil.erInlogget(){ 
 		 * använd egna klasser för att minska rot
