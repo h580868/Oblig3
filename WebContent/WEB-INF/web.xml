@@ -1,56 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-	version="4.0">
-	<servlet>
-		<servlet-name>bekreftelse</servlet-name>
-		<servlet-class>no.hvl.dat108.BekreftelseServlet</servlet-class>
-	</servlet>
-
-	<servlet>
-		<servlet-name>deltagerliste</servlet-name>
-		<servlet-class>no.hvl.dat108.DeltagerListeServlet</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>inlogging</servlet-name>
-		<servlet-class>no.hvl.dat108.InnloggingServlet</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>paamelding</servlet-name>
-		<servlet-class>no.hvl.dat108.PaameldingServlet</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>utlogget</servlet-name>
-		<servlet-class>no.hvl.dat108.UtloggetServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>bekreftelse</servlet-name>
-		<url-pattern>/bekreftelse</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>deltagerliste</servlet-name>
-		<url-pattern>/deltagerliste</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>innlogging</servlet-name>
-		<url-pattern>/innlogging</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>paamelding</servlet-name>
-		<url-pattern>/paamelding</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>utlogget</servlet-name>
-		<url-pattern>/utlogget</url-pattern>
-	</servlet-mapping>
-
-
-
-	<welcome-file-list>
-		<welcome-file>paamelding.jsp</welcome-file>
-		<welcome-file>innlogging.jsp</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-	</welcome-file-list>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>Oblig_3</display-name>
+  <welcome-file-list>
+    <welcome-file>paamelding</welcome-file>
+  </welcome-file-list>
 </web-app>
