@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
 		String username = request.getParameter("username");
 
 	    if (username == null || !Validator.isValidUsername(username)) {
-	        response.sendRedirect(LOGIN_URL + "?invalidUsername");
+	        //response.sendRedirect(LOGIN_URL + "?invalidUsername");
 	    } else {
 
 	        HttpSession sesjon = request.getSession(false);
@@ -52,9 +52,9 @@ public class LoginServlet extends HttpServlet {
 	        sesjon.setMaxInactiveInterval(10);
 
 	        sesjon.setAttribute("username", username);
-	        sesjon.setAttribute("cart", new Cart());
+	        //sesjon.setAttribute("cart", new Cart());
 
-	        response.sendRedirect(WEBSHOP_URL);
+	        //response.sendRedirect(WEBSHOP_URL);
 	    }
 		Guest guest = new Guest();
 		//borde sannolikt spara parameter som variablar först för att validera eller gör vi det bara i JS?
@@ -66,14 +66,5 @@ public class LoginServlet extends HttpServlet {
 
 	}
 	
-	protected class Validator {
-
-	    public boolean validator(String s) {
-	        return s != null
-	                && s.length() == 8
-	                && s.matches("^[0-9]+$");
-	    }
-	    }
-
 }
 

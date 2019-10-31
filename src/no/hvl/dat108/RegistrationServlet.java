@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ejb.EJB;
 
-@WebServlet("/registration" )
+@WebServlet(name = "registration", urlPatterns="/registration" )
 public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -22,11 +22,20 @@ public class RegistrationServlet extends HttpServlet {
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO forward to WEB-INF/paamelding.jsp + plocka upp data och felmedelanden
+		RequestDispatcher dispatcher;
+		//if (isRegistered || !allFieldsOk) {
+		// dispatcher = getServletContext().getNamedDispatcher("registration");	
+		//} else {
+		dispatcher = request.getRequestDispatcher("/WEB-INF/registration.jsp"); //change to login later
+	//}
 		
+		dispatcher.forward(request, response);
 	} 
 	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
 		/* TODO 
 		 * hemta alla parametrar (i ett objekt snarare än enskilda variablar kanske)
 		 * validera alla parametrar
