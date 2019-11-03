@@ -1,6 +1,8 @@
 package no.hvl.dat108;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,13 +21,15 @@ public class LogoutServlet extends HttpServlet {
     }
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
 		 HttpSession sesjon = request.getSession(false);
 		    if (sesjon != null) {
 		        sesjon.invalidate();
 		    }
+		    RequestDispatcher dispatcher;
+			
+			dispatcher = request.getRequestDispatcher("/WEB-INF/logout.html");
+			dispatcher.forward(request, response);
+		    
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

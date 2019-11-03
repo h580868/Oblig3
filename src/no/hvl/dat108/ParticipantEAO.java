@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Stateless
-public class GuestEAO {
+public class ParticipantEAO {
 	
 	@PersistenceContext(name = "guestPU")
     private EntityManager em;
@@ -16,14 +16,14 @@ public class GuestEAO {
 //		return em.find(Klasse.class, klassekode);
 //	}
 	
-	public void addGuest(Guest guest) {
-		em.persist(guest);
+	public void addParticipant(Participant participant) {
+		em.persist(participant);
 	}
 	
 
-	//public List<Deltager> hentDeltagerListe() {
+	//public List<Participant> getListOfParticipants() {
 // 		Her utnytter jeg toveis navigasjon!
-	//	return em.find(Deltager.class, null).getDeltager();
+	//return em.find(Participant.class, null).getParticipant();
 	//}
 
 

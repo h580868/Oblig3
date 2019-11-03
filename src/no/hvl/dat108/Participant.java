@@ -7,8 +7,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema = "oblig3", name = "guest")
-public class Guest {
+@Table(schema = "oblig3", name = "participant")
+public class Participant {
 
 	@Id
 	private String mobil;
@@ -58,6 +58,7 @@ public class Guest {
 		return "Guest [mobil=" + mobil + ", passord=" + passord + ", fornavn=" + fornavn + ", etternavn="
 				+ etternavn + ", kjonn=" + kjonn + "]";
 	}
+	
 	
 
 	/*

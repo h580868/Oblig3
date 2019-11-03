@@ -1,6 +1,8 @@
 package no.hvl.dat108;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,8 +22,10 @@ public class ConfirmationServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		RequestDispatcher dispatcher;
+		
+		dispatcher = request.getRequestDispatcher("/WEB-INF/confirmation.jsp"); //change to login later
+		dispatcher.forward(request, response);
 	}
 
 

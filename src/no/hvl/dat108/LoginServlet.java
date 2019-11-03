@@ -16,7 +16,7 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@EJB
-	GuestEAO guestEAO;
+	ParticipantEAO participantEAO;
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -38,33 +38,41 @@ public class LoginServlet extends HttpServlet {
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String username = request.getParameter("username");
+		String fornavn = request.getParameter("fornavn");
+		String etternavn = request.getParameter("etternavn");
 
-	    if (username == null || !Validator.isValidUsername(username)) {
-	        //response.sendRedirect(LOGIN_URL + "?invalidUsername");
+	    if (!Validator.isValidName(fornavn) || !Validator.isValidName(etternavn)) {
+	        response.sendRedirect("" + "?invalidUsername");
 	    } else {
 
-	        HttpSession sesjon = request.getSession(false);
-	        if (sesjon != null) {
-	            sesjon.invalidate();
+	        HttpSession session = request.getSession(false);
+	        if (session != null) {
+	            session.invalidate();
 	        }
-	        sesjon = request.getSession(true);
-	        sesjon.setMaxInactiveInterval(10);
+	        session = request.getSession(true);
+	        session.setMaxInactiveInterval(10);
 
-	        sesjon.setAttribute("username", username);
+	       // session.setAttribute("username", username);
 	        //sesjon.setAttribute("cart", new Cart());
 
 	        //response.sendRedirect(WEBSHOP_URL);
 	    }
-		Guest guest = new Guest();
+	    char Kjonn =request.getParameter("kjonn").charAt(0);
+	    
+	    
+		Participant participant = new Participant();
 		//borde sannolikt spara parameter som variablar först för att validera eller gör vi det bara i JS?
-		guest.setMobil(request.getParameter("mobil"));
-		guest.setFornavn(request.getParameter("fornavn"));
-		guest.setEtternavn(request.getParameter("etternavn"));
+		participant.setMobil(request.getParameter("mobil"));
+		participant.setPassord(request.getParameter("passord"));
+		participant.setFornavn(request.getParameter("fornavn"));
+		participant.setEtternavn(request.getParameter("etternavn"));
+		participant.setKjonn(request.getParameter("kjonn").charAt(0));
 		
-		guestEAO.addGuest(guest);
+		
+		participantEAO.addParticipant(participant);
 
 	}
 	
+
 }
 
