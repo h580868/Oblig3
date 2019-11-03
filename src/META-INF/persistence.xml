@@ -12,7 +12,7 @@
 		<jta-data-source>DAT108LocalDS</jta-data-source>
 		
 		<!-- <class>no.hvl.dat108.PaameldingServlet</class> -->
-		<class>no.hvl.dat108.Guest</class>
+		<class>no.hvl.dat108.Participant</class>
 		
 		<properties>
 			<property name="eclipselink.weaving" value="false" />

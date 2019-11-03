@@ -1,3 +1,5 @@
+"use strict";
+
 let inputMobile = document.getElementById("mobile");
 let inputPassword = document.getElementById("password");
 
@@ -50,7 +52,6 @@ function check() {
     }
 }
 
-}
 
 function checkValid() {
     check
