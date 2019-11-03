@@ -1,4 +1,5 @@
-'use strict';
+/*eslint es6 */
+"use strict";
 
 let inputFirstname = document.getElementById("firstname");
 let inputLastname = document.getElementById("lastname");
@@ -9,17 +10,10 @@ let inputGender = document.getElementsByName("gender");
 
 let buttonSubmit = document.getElementById("submitButton");
 
-let p1 = document.getElementById('p1');
-let p2 = document.getElementById('p2');
-let p3 = document.getElementById('p3');
-let p4 = document.getElementById('p4');
-let p5 = document.getElementById('p5');
-let p6 = document.getElementById('p6');
-
 inputFirstname.title = "Skriv inn fornavn";
 inputLastname.title = "Skriv inn etternavn";
 inputMobile.title = "Skriv inn mobilnummer";
-inputPassword.title = "Passord minst 3 tegn."
+inputPassword.title = "Passord minst 3 tegn.";
 inputPasswordRep.title = "Passordene må være like.";
 
 let validFirstname = false;
@@ -39,12 +33,14 @@ inputMobile.addEventListener("input", checkMobile);
 inputPasswordRep.addEventListener("input", checkPasswords);
 inputPassword.addEventListener("input", checkInputPassword);
 
-for (var i = 0, length = inputGender.length; i < length; i++) {
-    inputGender[i].addEventListener("change", event => {
-        validGender = true;
-        checkValid();
-    });
-}
+inputGender[0].addEventListener("change", event => {
+    validGender = true;
+    checkValid();
+});
+inputGender[1].addEventListener("change", event => {
+    validGender = true;
+    checkValid();
+});
 
 // Function that checks password length
 function checkInputFirstname() {

@@ -38,8 +38,8 @@
                 </div>
                 <div class="pure-control-group">
                     <label for="kjonn">Kjønn:</label>
-                    <input id="gender" type="radio" name="gender" value="mann" />Mann
-                    <input id="gender" type="radio" name="gender" value="kvinne" />Kvinne
+                    <input type="radio" name="gender" value="mann" />Mann
+                    <input type="radio" name="gender" value="kvinne" />Kvinne
                 </div>
                 <div class="pure-controls">
                     <button id="submitButton" type="submit" class="pure-button pure-button-primary">Meld
